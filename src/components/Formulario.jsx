@@ -13,7 +13,7 @@ export const Formulario = () => {
             name="marca"
             className="w-full p-3 bg-white border border-gray-200"
           >
-            <option value="" selected>
+            <option value="">
               -- Selecionar marca --
             </option>
 
@@ -32,7 +32,7 @@ export const Formulario = () => {
             name="año"
             className="w-full p-3 bg-white border border-gray-200"
           >
-            <option value="" selected>
+            <option value="">
               -- Selecionar año --
             </option>
 
@@ -47,30 +47,22 @@ export const Formulario = () => {
           <label className="block mb-3 font-bold text-gray-500 uppercase">
             Planes
           </label>
-       
-            <div className="flex gap-3 items-center">
-            {PLANES.map((plan) => (
-                <Fragment key={plan.id}>
-                    <label>{plan.nombre}</label>
-                    <input type="radio"
-                    name={plan}
-                    value={plan.id}>
 
-                    </input>
-                </Fragment>
+          <div className="flex gap-3 items-center">
+            {PLANES.map((plan) => (
+              <Fragment key={plan.id}>
+                <label>{plan.nombre}</label>
+                <input type="radio" name={plan} value={plan.id}></input>
+              </Fragment>
             ))}
-            </div>
-          
-     
+          </div>
         </div>
         <input
-        type="submit"
-        className="w-full bg-sky-500 hover:bg-sky-600 transition-colors text-white
+          type="submit"
+          className="w-full bg-sky-500 hover:bg-sky-600 transition-colors text-white
         cursor-pointer uppercase p-3 font-bold rounded-md"
-        value="Calcular seguro"
-        >
-
-        </input>
+          value="Calcular seguro"
+        ></input>
       </form>
     </>
   );
